@@ -1,0 +1,33 @@
+Oracle Rac crsctl and srvctl commands
+ 
+
+CRSCTL Commands :-
+
+Cluster Related Commands
+crs_stat t	 Shows HA resource status (hard to read)
+crsstat	Output of crs_stat t formatted nicely
+crsctl check crs	CSS,CRS,EVM appears healthy
+crsctl stop crs	Stop crs and all other services
+crsctl disable crs	Prevents CRS from starting on reboot
+crsctl enable crs	Enables CRS start on reboot
+crs_stop all	Stops all registered resources
+crs_start all	Starts all registered resources
+crsctl stop cluster -all	Stops the cluster in all nodes
+crsctl start cluster -all	Starts the cluster in all nodes
+SRVCTL Commands :-
+
+Database Related Commands
+srvctl start instance -d <db_name>  -i <inst_name>	Starts an instance
+srvctl start database -d <db_name>	Starts all instances
+srvctl stop database -d <db_name>	Stops all instances, closes database
+srvctl stop instance -d <db_name> -i <inst_name>	Stops an instance
+srvctl start service -d <db_name> -s <service_name>	Starts a service
+srvctl stop service -d <db_name> -s <service_name>	Stops a service
+srvctl status service -d <db_name>	Checks status of a service
+srvctl status instance -d <db_name> -i <inst_name>	Checks an individual instance
+srvctl status database -d  <db_name>	Checks status of all instances
+srvctl start nodeapps -n  <node_name>	Starts gsd, vip, listener, and ons
+srvctl stop nodeapps -n  <node_name>	Stops gsd, vip and listener
+srvctl status scan	Status of scan listener
+srvctl config scan	Configuration of scan listener
+srvctl status asm	Status of ASM instance
